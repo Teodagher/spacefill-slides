@@ -161,6 +161,14 @@
   .tlwrap svg{width:min(1150px,100%);height:auto;}
   .tlwrap svg text{font-family:inherit;}
 
+  /* Day 1 pipeline — 7 numbered steps with arrows between */
+  .pipe{display:flex;align-items:stretch;justify-content:center;gap:5px;margin-top:34px;width:100%;flex-wrap:nowrap;}
+  .pstep{flex:1 1 0;min-width:0;background:#172234;border:1px solid rgba(249,115,22,.30);border-top:3px solid var(--deep);border-radius:11px;padding:16px 13px;display:flex;flex-direction:column;text-align:left;}
+  .pstep .pn{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--deep);}
+  .pstep .pt{font-size:14.5px;font-weight:600;color:#fff;margin-top:8px;line-height:1.22;}
+  .pstep .ps{font-size:11px;font-weight:300;color:var(--muted);margin-top:6px;line-height:1.32;word-break:break-word;}
+  .parrow{flex:0 0 auto;align-self:center;color:var(--deep);font-size:17px;font-weight:300;}
+
   /* Live challenge timer */
   .timerwrap{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;}
   .biglogo{padding:16px 34px;border-radius:14px;gap:28px;margin-bottom:36px;}
@@ -793,56 +801,22 @@
       <span class="tag">Your turn</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
-      <span class="kicker r">Two hours &middot; four steps &middot; one working product</span>
+      <span class="kicker r">Your Day 1 pipeline &middot; seven steps to your first build</span>
       <h1 class="r" style="margin:6px 0 0;font-size:58px;">Let's build</h1>
-      <div class="tlwrap r">
-        <svg viewBox="0 0 1240 250" role="img" aria-label="Two-hour build timeline from 10:00 to 12:00: Claude Code setup 5 minutes, Master Prompt and Flow, Build the core feature 60 minutes, Iterate 30 minutes">
-          <defs>
-            <linearGradient id="tlg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
-          </defs>
-          <g>
-            <rect x="83" y="100" width="124" height="92" rx="9" fill="#172234" stroke="rgba(249,115,22,.38)" stroke-width="1.4"/>
-            <rect x="92" y="103" width="106" height="4" rx="2" fill="url(#tlg)"/>
-            <text x="99" y="130" fill="#fb923c" font-size="13" font-weight="700">1</text>
-            <text x="145" y="150" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="600">Claude Code setup</text>
-            <text x="145" y="172" text-anchor="middle" fill="#9ca3af" font-size="12">~5 min</text>
-          </g>
-          <g>
-            <rect x="213" y="100" width="254" height="92" rx="9" fill="#172234" stroke="rgba(249,115,22,.38)" stroke-width="1.4"/>
-            <rect x="222" y="103" width="236" height="4" rx="2" fill="url(#tlg)"/>
-            <text x="229" y="130" fill="#fb923c" font-size="13" font-weight="700">2</text>
-            <text x="340" y="150" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="600">Master Prompt &amp; Flow</text>
-            <text x="340" y="172" text-anchor="middle" fill="#9ca3af" font-size="12.5">Describe it in plain words</text>
-          </g>
-          <g>
-            <rect x="473" y="100" width="401" height="92" rx="9" fill="#172234" stroke="rgba(249,115,22,.38)" stroke-width="1.4"/>
-            <rect x="482" y="103" width="383" height="4" rx="2" fill="url(#tlg)"/>
-            <text x="489" y="130" fill="#fb923c" font-size="13" font-weight="700">3</text>
-            <text x="675" y="150" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">Build the core feature</text>
-            <text x="675" y="173" text-anchor="middle" fill="#9ca3af" font-size="12.5">Get the one essential thing working &middot; ~60 min</text>
-          </g>
-          <g>
-            <rect x="883" y="100" width="274" height="92" rx="9" fill="#172234" stroke="rgba(249,115,22,.38)" stroke-width="1.4"/>
-            <rect x="892" y="103" width="256" height="4" rx="2" fill="url(#tlg)"/>
-            <text x="899" y="130" fill="#fb923c" font-size="13" font-weight="700">4</text>
-            <text x="1020" y="150" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">Iterate</text>
-            <text x="1020" y="173" text-anchor="middle" fill="#9ca3af" font-size="12.5">See, decide, improve &middot; ~30 min</text>
-          </g>
-          <g stroke="#3a4658" stroke-width="1.5">
-            <line x1="80" y1="200" x2="80" y2="212"/>
-            <line x1="210" y1="200" x2="210" y2="212"/>
-            <line x1="470" y1="200" x2="470" y2="212"/>
-            <line x1="880" y1="200" x2="880" y2="212"/>
-            <line x1="1160" y1="200" x2="1160" y2="212"/>
-          </g>
-          <g fill="#9ca3af" font-size="12.5" font-weight="600">
-            <text x="80" y="232" text-anchor="middle">10:00</text>
-            <text x="210" y="232" text-anchor="middle">10:05</text>
-            <text x="470" y="232" text-anchor="middle">10:30</text>
-            <text x="880" y="232" text-anchor="middle">11:30</text>
-            <text x="1160" y="232" text-anchor="middle">12:00</text>
-          </g>
-        </svg>
+      <div class="pipe r">
+        <div class="pstep"><span class="pn">01</span><span class="pt">Master Prompt</span><span class="ps">Generate it &middot; spacefill-master-prompt.vercel.app</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">02</span><span class="pt">Download boilerplate</span><span class="ps">Grab the zip from GitHub</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">03</span><span class="pt">Open the folder</span><span class="ps">In Claude Code (desktop)</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">04</span><span class="pt">Connect Supabase</span><span class="ps">Create an organization</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">05</span><span class="pt">/kickoff</span><span class="ps">Sets up in the background</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">06</span><span class="pt">User Flow</span><span class="ps">Map it in Whimsical</span></div>
+        <span class="parrow">&rarr;</span>
+        <div class="pstep"><span class="pn">07</span><span class="pt">Paste Master Prompt</span><span class="ps">Into Claude Code &mdash; and build</span></div>
       </div>
     </div>
     <div class="foot"><span>From idea to something real</span></div>
@@ -1004,11 +978,13 @@
       <div class="tl-left r">
         <div class="tl-kicker">Today's flow</div>
         <ol class="tl-steps">
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Claude Code setup &amp; <b>/kickoff</b></span><span class="tl-time">10:00 &middot; ~5 min</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Master Prompt &amp; Flow &mdash; chat it through</span><span class="tl-time">10:05 &rarr; 10:30 &middot; up to 30 min</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Paste the Master Prompt &amp; wait for the first preview</span><span class="tl-time">10:30</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Build the core feature</span><span class="tl-time">10:30 &rarr; 11:30</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Reiterate until you're satisfied</span><span class="tl-time">11:30 &rarr; 12:00</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Get your <b>Master Prompt</b> &mdash; spacefill-master-prompt.vercel.app</span><span class="tl-time">10:00</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Download the boilerplate &amp; open it in Claude Code</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Connect the <b>Supabase</b> connector &mdash; create an org</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t"><b>/kickoff</b> &mdash; sets up in the background</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Map your <b>User Flow</b> in Whimsical</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Paste your <b>Master Prompt</b> on Claude</span><span class="tl-time">~10:30</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Build the core feature, then iterate</span><span class="tl-time">10:30 &rarr; 12:00</span></div></li>
         </ol>
         <div class="tl-coaches">
           <div class="tl-coaches-lbl">Your coaches &middot; call us anytime</div>
