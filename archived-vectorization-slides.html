@@ -1,0 +1,78 @@
+<!--
+  ARCHIVED — vectorization / "how LLMs work" slides.
+  Removed from the live deck (index.html) but kept here for safekeeping.
+  To restore: paste these two <section> blocks back into index.html before
+  the "10a · TALK TO IT LIKE AN ENGINEER" slide. The supporting CSS (.vecmap,
+  .vspace) and the interactive JS (#vmap crosshair, centerGraph) are still in
+  index.html, so they'll work again as soon as the sections are back.
+-->
+
+  <!-- 10b · HOW LLMS WORK -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Under the hood</span>
+    </div>
+    <div class="body">
+      <div class="split" style="align-items:center;gap:54px;">
+        <div>
+          <h2 class="r">LLMs: How they work</h2>
+          <div class="underline r"></div>
+          <p class="lead r" style="margin-top:16px;">Every word is a point in space &mdash; the model just <span class="accent">predicts the next one</span>.</p>
+          <div class="example-box r" style="margin-top:26px;">
+            <span class="lbl" id="predlbl">Next-word prediction</span>
+            <p id="predtext">"The client signed the ___" &rarr; <b>contract 92%</b> &middot; proposal 7% &middot; bicycle 0.01%</p>
+          </div>
+        </div>
+        <div class="r">
+          <div class="vecmap" id="vmap">
+            <svg viewBox="0 0 560 420">
+              <line class="grid" x1="60" y1="90" x2="540" y2="90"/>
+              <line class="grid" x1="60" y1="190" x2="540" y2="190"/>
+              <line class="grid" x1="60" y1="290" x2="540" y2="290"/>
+              <line class="grid" x1="180" y1="20" x2="180" y2="380"/>
+              <line class="grid" x1="320" y1="20" x2="320" y2="380"/>
+              <line class="grid" x1="460" y1="20" x2="460" y2="380"/>
+              <line class="axis" x1="60" y1="20" x2="60" y2="380"/>
+              <line class="axis" x1="60" y1="380" x2="540" y2="380"/>
+              <text class="axlbl" x="300" y="408" text-anchor="middle">dimension 1 &middot; e.g. leisure &#8596; business</text>
+              <text class="axlbl" x="-200" y="40" transform="rotate(-90)" text-anchor="middle">dimension 2 &middot; e.g. casual &#8596; formal</text>
+              <g id="predlines"></g>
+              <g class="word"><circle class="dot" cx="380" cy="95" r="7"/><text class="wlbl" x="380" y="76" text-anchor="middle">client</text></g>
+              <g class="word"><circle class="dot" cx="450" cy="133" r="7"/><text class="wlbl" x="450" y="160" text-anchor="middle">contract</text></g>
+              <g class="word"><circle class="dot" cx="356" cy="156" r="7"/><text class="wlbl" x="340" y="182" text-anchor="middle">delivery</text></g>
+              <g class="word"><circle class="dot" cx="452" cy="68" r="7"/><text class="wlbl" x="452" y="49" text-anchor="middle">revenue</text></g>
+              <g class="word"><circle class="dot" cx="320" cy="92" r="7"/><text class="wlbl" x="304" y="73" text-anchor="middle">strategy</text></g>
+              <g class="word"><circle class="dot" cx="355" cy="200" r="7"/><text class="wlbl" x="355" y="227" text-anchor="middle">R&amp;D</text></g>
+              <g class="word"><circle class="dot far" cx="125" cy="312" r="7"/><text class="wlbl far" x="125" y="340" text-anchor="middle">bicycle</text></g>
+              <g class="word"><circle class="dot far" cx="208" cy="345" r="7"/><text class="wlbl far" x="212" y="372" text-anchor="middle">football</text></g>
+              <g class="word"><circle class="dot far" cx="105" cy="248" r="7"/><text class="wlbl far" x="105" y="229" text-anchor="middle">holiday</text></g>
+              <g id="vcross" style="display:none;">
+                <line id="vcx" class="cross" x1="0" y1="20" x2="0" y2="380"/>
+                <line id="vcy" class="cross" x1="60" y1="0" x2="540" y2="0"/>
+                <g id="vtip">
+                  <rect class="tipbox" width="178" height="68" rx="5"/>
+                  <text class="tipk" x="14" y="26">dimension 1</text><text id="vt1" class="tipv" x="164" y="26" text-anchor="end">0.0</text>
+                  <text class="tipk" x="14" y="44">dimension 2</text><text id="vt2" class="tipv" x="164" y="44" text-anchor="end">0.0</text>
+                  <text class="tipk" x="14" y="62">closest word</text><text id="vt3" class="tipv" x="164" y="62" text-anchor="end">client</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="caption">Click a word to see what the model predicts next.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Every answer is next-word prediction. Next: how to brief it</span></div>
+  </section>
+
+  <!-- 10b-ii · VECTOR SPACE (image only) -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Under the hood</span>
+    </div>
+    <div class="body">
+      <div class="vspace r"><img src="vectorspace.png" alt="A vector space of word embeddings" /></div>
+    </div>
+  </section>

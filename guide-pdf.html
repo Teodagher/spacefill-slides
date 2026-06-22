@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AI Product Crafting Lab — Quick guide</title>
+<style>
+  @page { size: A4; margin: 11mm 15mm 10mm; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#1B2530; --muted:#5C6B78; --line:#E3EAF0;
+    --orange:#f97316; --orange-d:#ea580c; --panel:#FFF6EF;
+  }
+  html,body{background:#fff;}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);font-size:10.2pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  a{color:var(--orange-d);text-decoration:none;word-break:break-all;}
+
+  .head{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:2px solid var(--orange);}
+  .logos{display:flex;align-items:center;gap:14px;}
+  .logos .cap{height:30px;}
+  .logos .iq{height:28px;}
+  .logos .divider{width:1px;height:26px;background:var(--line);}
+  .head .kick{font-size:8.5pt;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;}
+
+  h1{font-size:20pt;font-weight:700;line-height:1.08;margin:12px 0 3px;letter-spacing:-.01em;}
+  h1 .o{color:var(--orange-d);}
+  .sub{font-size:10.3pt;color:var(--muted);margin-bottom:11px;}
+
+  .links{background:var(--panel);border:1px solid #F3D9C4;border-left:4px solid var(--orange);border-radius:8px;padding:10px 16px;margin-bottom:13px;}
+  .links .lbl{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-d);margin-bottom:7px;}
+  .links p{font-size:10pt;margin:4px 0;}
+  .links b{color:var(--ink);font-weight:600;}
+
+  .step{margin-bottom:9px;break-inside:avoid;}
+  .step h2{font-size:12.5pt;font-weight:700;margin-bottom:5px;display:flex;align-items:baseline;gap:9px;}
+  .step h2 .n{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-size:9.5pt;font-weight:700;}
+  .step h2 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11pt;color:var(--orange-d);background:#FFF1E6;padding:1px 7px;border-radius:5px;}
+  ul{list-style:none;padding-left:31px;}
+  li{position:relative;margin:3px 0;padding-left:14px;color:var(--ink);}
+  li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--orange);}
+  li code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:9.5pt;color:var(--orange-d);background:#FFF1E6;padding:0 4px;border-radius:4px;}
+  .muted{color:var(--muted);}
+
+  .coaches{margin:11px 0 2px;font-size:10.5pt;font-weight:600;}
+  .coaches .o{color:var(--orange-d);}
+
+  .further{margin-top:12px;background:#0E1521;border-radius:10px;padding:13px 18px;color:#E7ECF1;break-inside:avoid;}
+  .further h3{font-size:11.5pt;color:#fff;margin-bottom:6px;}
+  .further p{font-size:9.8pt;color:#AEB8C2;margin-bottom:10px;}
+  .further .keylbl{font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fb923c;margin-bottom:5px;}
+  .key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:8.6pt;line-height:1.4;color:#fff;background:#1b2532;border:1px solid #2a3645;border-radius:7px;padding:10px 12px;word-break:break-all;-webkit-user-select:all;user-select:all;}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="logos">
+      <img class="cap" src="capgemini-wordmark.png" alt="Capgemini" />
+      <span class="divider"></span>
+      <img class="iq" src="iq-badge.png" alt="IQ Project" />
+    </div>
+  </div>
+
+  <h1>The AI Product Crafting Lab<br/><span class="o">Quick guide</span></h1>
+  <div class="sub">From idea to a working product, in plain words — Codex does the building.</div>
+
+  <div class="links">
+    <div class="lbl">Links</div>
+    <p><b>Slide deck:</b> <a href="https://ai-product-crafting-lab.vercel.app/">https://ai-product-crafting-lab.vercel.app/</a></p>
+    <p><b>Master Prompt builder:</b> <a href="https://iq-capgemini-ai-crafting-lab.vercel.app/">https://iq-capgemini-ai-crafting-lab.vercel.app/</a></p>
+    <p><b>Boilerplate to add on Codex:</b> <a href="https://capgemini.sharepoint.com/sites/GroupIndustrializationHub/Industrialization%20Shared%20Services/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FGroupIndustrializationHub%2FIndustrialization%20Shared%20Services%2FShared%20Documents%2FAI%20Summit%2018%20Jun&viewid=e8784b66%2D3f22%2D4640%2Db2ee%2D9ac99c138aba">SharePoint &mdash; AI Summit 18 Jun</a></p>
+  </div>
+
+  <div class="step">
+    <h2><span class="n">1</span> Codex setup</h2>
+    <ul>
+      <li>Open <b>Codex</b> (the "Ask anything" window).</li>
+      <li>Open the <b>boilerplate folder</b> inside Codex (download it from the SharePoint link above first).</li>
+      <li>Set approval to <b>"Approve for me."</b></li>
+      <li>Check the bottom row: project <b>Capgemini Boilerplate</b>, <b>Work locally</b>, branch <b>main</b>.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="n">2</span> Run <code>/kickoff</code></h2>
+    <ul>
+      <li>Type <code>/kickoff</code> &rarr; pick the Capgemini boilerplate.</li>
+      <li>Let it install and run. It opens a <b>live preview</b> — keep it open.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="n">3</span> Build your Master Prompt</h2>
+    <ul>
+      <li>Open the <b>Master Prompt builder</b>: <a href="https://iq-capgemini-ai-crafting-lab.vercel.app/">https://iq-capgemini-ai-crafting-lab.vercel.app/</a></li>
+      <li>Answer its questions: <b>who it's for</b>, the <b>one job</b>, the <b>flow</b> (open &rarr; do the thing &rarr; done).</li>
+      <li><b>Copy</b> the Master Prompt it gives you.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="n">4</span> Paste &amp; first preview</h2>
+    <ul>
+      <li>Paste the Master Prompt into the Codex chat and send.</li>
+      <li>Let it build, then <b>try the app</b> in the preview.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="n">5</span> Reiterate &amp; build</h2>
+    <ul>
+      <li>Loop: <b>see it &rarr; decide &rarr; ask in plain words</b> (e.g. "Make the Save button bigger.").</li>
+      <li>Something off? <b>Screenshot it, paste it, say what's wrong.</b></li>
+      <li>You direct, Codex builds. Keep going until you're happy.</li>
+    </ul>
+  </div>
+
+  <div class="coaches">Stuck? Call a coach — <span class="o">Teo Dagher, Teo Paquet, or Arman Amini.</span></div>
+
+  <div class="further">
+    <h3>If you want to go further…</h3>
+    <p>To add AI features to your app or site, you might need an API key. Feel free to ask a coach for help.</p>
+    <div class="keylbl">OpenAI API key</div>
+    <div class="key">ask a coach for the API key</div>
+  </div>
+</body>
+</html>
