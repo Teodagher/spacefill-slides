@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The AI Product Crafting Lab · Capgemini × IQ</title>
+<title>The AI Product Crafting Lab · Spacefill × IQ</title>
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" href="favicon-64.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -46,7 +46,7 @@
   .slide.light{background:transparent;}
   .slide.panel{background:transparent;}
   .slide.hero{color:#fff;background:transparent;}
-  .slide.title{background:#000 url('capgemini-intro-bg.png') center/cover no-repeat;}
+  .slide.title{background:transparent;}
   .slide.data{background:transparent;}
   .slide.timer-slide{background:#000;}
   .tbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;z-index:0;}
@@ -168,6 +168,34 @@
   .pstep .pt{font-size:14.5px;font-weight:600;color:#fff;margin-top:8px;line-height:1.22;}
   .pstep .ps{font-size:11px;font-weight:300;color:var(--muted);margin-top:6px;line-height:1.32;word-break:break-word;}
   .parrow{flex:0 0 auto;align-self:center;color:var(--deep);font-size:17px;font-weight:300;}
+
+  /* Click-to-reveal: geniuses (names) + kiwi (answer) */
+  .reveal-hint{font-size:13px;color:var(--muted);letter-spacing:.04em;transition:opacity .3s ease;}
+  .genius .gmeta{position:relative;min-height:64px;display:flex;align-items:center;justify-content:center;padding:13px 12px;}
+  .genius .gq{position:absolute;font-size:30px;font-weight:700;color:var(--deep);transition:opacity .35s ease;}
+  .genius .greveal{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease;}
+  .genius.shown .gq{opacity:0;}
+  .genius.shown .greveal{opacity:1;transform:none;}
+  .kiwi-reveal{opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .55s ease,transform .55s ease;}
+  .kiwi-reveal.show{opacity:1;transform:none;pointer-events:auto;}
+
+  /* AI: input -> [box] -> output diagram */
+  .ailabel{align-self:flex-start;font-size:60px;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1;}
+  .aiflow{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:6px;flex-wrap:nowrap;}
+  .aio{font-size:21px;font-weight:600;white-space:nowrap;flex:0 0 auto;width:210px;}
+  .aio.ain{color:#60a5fa;text-align:right;}
+  .aio.aout{color:var(--vibrant);text-align:left;}
+  .aiar{position:relative;width:84px;height:3px;flex:0 0 auto;border-radius:2px;}
+  .aiar::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);border-left:12px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent;}
+  .aiar.in{background:#60a5fa;color:#60a5fa;}
+  .aiar.out{background:var(--vibrant);color:var(--vibrant);}
+  .aibox{position:relative;width:208px;height:248px;border-radius:22px;background:#0b0b0c;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .aibox .big{font-size:62px;font-weight:700;color:#fff;letter-spacing:.02em;}
+  .aibox>img{width:100%;height:100%;object-fit:cover;border-radius:22px;}
+  .aibox .qmark{position:absolute;top:28px;left:0;right:0;text-align:center;font-size:38px;font-weight:800;color:var(--vibrant);}
+  .aibox .toppers{position:absolute;top:-46px;left:0;right:0;display:flex;justify-content:center;align-items:flex-end;gap:6px;}
+  .aibox .toppers img{height:72px;width:auto;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.5));}
+  .ai5050{margin-top:10px;font-size:22px;font-weight:700;color:var(--vibrant);text-align:center;}
 
   /* Live challenge timer */
   .timerwrap{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;}
@@ -469,10 +497,10 @@
   <!-- 1 · TITLE -->
   <section class="slide hero title">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
     </div>
     <div class="body">
-      <span class="kicker r">Capgemini &times; IQ &middot; June 2026</span>
+      <span class="kicker r">Spacefill &times; IQ &middot; June 2026</span>
       <h1 class="r" style="margin-top:18px;">The AI Product<br/>Crafting Lab</h1>
       <p class="lead r">Before you build, let's get on the same page. In 45 minutes you'll learn how to turn an idea into a working product, just by describing it.</p>
     </div>
@@ -482,7 +510,7 @@
   <!-- 2 · INTRODUCTION / INSTRUCTORS -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Introduction</span>
     </div>
     <div class="body">
@@ -494,15 +522,11 @@
           <div class="people" style="margin-top:26px;">
             <div class="person r">
               <div class="avatar"><img src="teo-dagher.png" alt="Teo Dagher" /></div>
-              <div><div class="pname">Teo Dagher</div><div class="prole">Founder of ASTRY</div></div>
+              <div><div class="pname">Teo Dagher</div><div class="prole">Founder of ASTRY · AI Product Engineer</div></div>
             </div>
             <div class="person r">
-              <div class="avatar"><img src="teo-paquet.jpeg" alt="Teo Paquet" /></div>
-              <div><div class="pname">Teo Paquet</div><div class="prole">Founder of SkAI Tech</div></div>
-            </div>
-            <div class="person r">
-              <div class="avatar"><img src="arman.jpeg" alt="Arman Amini" /></div>
-              <div><div class="pname">Arman Amini</div><div class="prole">Founder of Silex</div></div>
+              <div class="avatar"><img src="images/nathan.jpeg" alt="Nathan Gatto" /></div>
+              <div><div class="pname">Nathan Gatto</div><div class="prole">Entrepreneur &middot; IQ Project, specialized in agentic development</div></div>
             </div>
           </div>
         </div>
@@ -515,10 +539,34 @@
     <div class="foot"><span>Your guides for the next two hours</span></div>
   </section>
 
+  <!-- 2b · ROADMAP · 8 SESSIONS -->
+  <section class="slide panel">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Roadmap</span>
+    </div>
+    <div class="body">
+      <h2 class="r">8 sessions to nail it</h2>
+      <div class="underline r"></div>
+      <div class="grid g4 r" style="margin-top:26px;">
+        <div class="card" style="background:rgba(249,115,22,.12);border-color:var(--deep);"><div class="role">Session 1 &middot; Today</div><h3>Start</h3><p>User flow, master prompt, first shot</p></div>
+        <div class="card"><div class="role">Session 2</div><h3>Core feature</h3><p>Prompting &amp; iteration</p></div>
+        <div class="card"><div class="role">Session 3</div><h3>APIs &amp; MCP</h3><p>Connect real data</p></div>
+        <div class="card"><div class="role">Session 4</div><h3>Skills &amp; agents</h3><p>Advanced Claude Code</p></div>
+        <div class="card"><div class="role">Session 5</div><h3>Make it stronger</h3><p>Polish &amp; level up your product</p></div>
+        <div class="card"><div class="role">Session 6</div><h3>Deployment</h3><p>Ship it live</p></div>
+        <div class="card"><div class="role">Session 7</div><h3>Pitching</h3><p>Present your product</p></div>
+        <div class="card"><div class="role">Session 8</div><h3>Demo day</h3><p>Show it off &middot; celebrate &#127867;</p></div>
+      </div>
+      <p class="takeaway r" style="margin-top:24px;text-align:center;">Today is <b>Session 1</b> &mdash; from idea to your first working screen.</p>
+    </div>
+    <div class="foot"><span>One product, built a little further each session</span></div>
+  </section>
+
   <!-- 3 · BUILDING WITH AI, EFFICIENCY -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Building with AI</span>
     </div>
     <div class="body">
@@ -541,7 +589,7 @@
   <!-- 4 · WHAT IS A PRODUCT -->
   <section class="slide panel">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">The basics</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -555,7 +603,7 @@
   <!-- 4b · YOU WILL CRAFT A PRODUCT WITH AI -->
   <section class="slide light craft-slide">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">This lab</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -584,7 +632,7 @@
   <!-- 5 · CORE FEATURE -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">The basics</span>
     </div>
     <div class="body">
@@ -605,7 +653,7 @@
   <!-- 6 · IDEA TO CORE FEATURE -->
   <section class="slide panel">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Idea &rarr; Plan</span>
     </div>
     <div class="body" style="justify-content:center;">
@@ -623,37 +671,92 @@
     <div class="foot"><span>One promise &rarr; one action &rarr; one feature</span></div>
   </section>
 
-  <!-- 9 · MEET CLAUDE CODE -->
+  <!-- 8a · GENIUSES -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Meet Claude Code</span>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Inspiration</span>
     </div>
     <div class="body">
-      <div class="split">
-        <div>
-          <img src="claude-logo.png" alt="Claude Code" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
-          <h2 class="r">Meet Claude Code</h2>
-          <div class="underline r"></div>
-          <p class="lead r">Claude Code builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
-          <ul class="points r" style="margin-top:22px;">
-            <li><span class="tick"></span><span>You describe in plain words; it writes, runs and fixes the app.</span></li>
-            <li><span class="tick"></span><span>You stay the decision-maker, what gets built, and why.</span></li>
-          </ul>
+      <h2 class="r">Do you know these people?</h2>
+      <div class="underline r"></div>
+      <div class="grid g4 r" style="margin-top:26px;">
+        <div class="card genius" style="padding:0;overflow:hidden;text-align:center;">
+          <img src="images/leonarddevinci.png" alt="" style="width:100%;height:240px;object-fit:cover;object-position:center 18%;display:block;" />
+          <div class="gmeta"><span class="gq">?</span><div class="greveal"><h3 style="margin:0;">Leonardo da Vinci</h3><p style="margin-top:4px;">Art &amp; invention</p></div></div>
         </div>
-        <div class="r">
-          <div class="shot"><img src="claude-code-screenshot.jpg" alt="The Claude Code app" /></div>
-          <div class="caption">Open it, type what you want, and start building.</div>
+        <div class="card genius" style="padding:0;overflow:hidden;text-align:center;">
+          <img src="images/isaacnewton.png" alt="" style="width:100%;height:240px;object-fit:cover;object-position:center 16%;display:block;" />
+          <div class="gmeta"><span class="gq">?</span><div class="greveal"><h3 style="margin:0;">Isaac Newton</h3><p style="margin-top:4px;">Physics &amp; math</p></div></div>
+        </div>
+        <div class="card genius" style="padding:0;overflow:hidden;text-align:center;">
+          <img src="images/alberteinstein.png" alt="" style="width:100%;height:240px;object-fit:cover;object-position:center 38%;display:block;" />
+          <div class="gmeta"><span class="gq">?</span><div class="greveal"><h3 style="margin:0;">Albert Einstein</h3><p style="margin-top:4px;">Physics</p></div></div>
+        </div>
+        <div class="card genius" style="padding:0;overflow:hidden;text-align:center;">
+          <img src="genius-turing.png" alt="" style="width:100%;height:240px;object-fit:cover;object-position:center 20%;display:block;" />
+          <div class="gmeta"><span class="gq">?</span><div class="greveal"><h3 style="margin:0;">Alan Turing</h3><p style="margin-top:4px;">Computing</p></div></div>
+        </div>
+      </div>
+      <p class="reveal-hint" id="genHint" style="margin-top:22px;text-align:center;">Press &rarr; to reveal each name</p>
+      <p class="takeaway" id="genTake" style="margin-top:8px;text-align:center;opacity:0;transition:opacity .5s ease;">History's geniuses worked alone &mdash; today, <b>everyone has a genius on tap.</b></p>
+    </div>
+    <div class="foot"><span>The brightest minds in history &mdash; now on demand</span></div>
+  </section>
+
+  <!-- 8b · AI = INPUT -> OUTPUT (Einstein) -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">How AI works</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <div class="r" style="display:flex;flex-direction:column;align-items:center;width:100%;max-width:900px;margin:0 auto;">
+        <div class="ailabel">AI</div>
+        <div class="aiflow">
+          <span class="aio ain">Input</span>
+          <span class="aiar in"></span>
+          <div class="aibox"><img src="images/alberteinstein.png" alt="Einstein" /></div>
+          <span class="aiar out"></span>
+          <span class="aio aout">Output</span>
         </div>
       </div>
     </div>
-    <div class="foot"><span>A tireless engineer, on your terms. Next: what's under the hood</span></div>
+    <div class="foot"><span>A genius on tap &mdash; give it something, it gives you something back</span></div>
+  </section>
+
+  <!-- 8c · WHAT COLOUR IS A KIWI (reveal) -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">How AI works</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <div class="r" style="display:flex;flex-direction:column;align-items:center;width:100%;max-width:980px;margin:0 auto;">
+        <div class="ailabel">AI</div>
+        <div class="aiflow">
+          <span class="aio ain">What colour<br/>is a kiwi?</span>
+          <span class="aiar in"></span>
+          <div class="aibox">
+            <div class="toppers kiwi-reveal"><img src="kiwi-bird-cut.png" alt="kiwi bird" /><img src="kiwi-fruit-cut.png" alt="kiwi fruit" /></div>
+            <span class="qmark kiwi-reveal">??&hellip;</span>
+            <span class="big">AI</span>
+          </div>
+          <span class="aiar out"></span>
+          <span class="aio aout"><span class="kiwi-reveal">A brown bird &mdash; light to dark</span></span>
+        </div>
+        <p class="reveal-hint kiwi-hint" id="kiwiHint" style="margin-top:22px;">Press &rarr; to reveal the answer</p>
+        <div class="ai5050 kiwi-reveal" style="margin-top:10px;">AI just picks the most likely</div>
+        <p class="lead kiwi-reveal" style="margin-top:4px;text-align:center;">That's how AI works &mdash; on <span class="accent">probability</span>.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Same word, two meanings &mdash; AI bets on the probable one</span></div>
   </section>
 
   <!-- 10b · HOW LLMS WORK -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Under the hood</span>
     </div>
     <div class="body">
@@ -712,7 +815,7 @@
   <!-- 10b-ii · VECTOR SPACE (image only) -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Under the hood</span>
     </div>
     <div class="body">
@@ -720,10 +823,75 @@
     </div>
   </section>
 
+  <!-- 9 · MEET CLAUDE CODE -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Meet Claude Code</span>
+    </div>
+    <div class="body">
+      <div class="split">
+        <div>
+          <img src="claude-logo.png" alt="Claude Code" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
+          <h2 class="r">Meet Claude Code</h2>
+          <div class="underline r"></div>
+          <p class="lead r">Claude Code builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
+          <ul class="points r" style="margin-top:22px;">
+            <li><span class="tick"></span><span>You describe in plain words; it writes, runs and fixes the app.</span></li>
+            <li><span class="tick"></span><span>You stay the decision-maker, what gets built, and why.</span></li>
+          </ul>
+        </div>
+        <div class="r">
+          <div class="shot"><img src="claude-code-screenshot.jpg" alt="The Claude Code app" /></div>
+          <div class="caption">Open it, type what you want, and start building.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>A tireless engineer, on your terms</span></div>
+  </section>
+
+  <!-- 10c · AI VS AI AGENT -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">AI agents</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <h2 class="r" style="text-align:center;max-width:none;">AI thinks. An agent <span class="accent">acts.</span></h2>
+      <div class="compare r">
+        <div class="crow"><span class="clbl">AI</span><span class="ctext">The <b>thinking</b> part &mdash; you ask, it answers. Input in, words out.</span></div>
+        <div class="crow hl"><span class="clbl">AI agent</span><span class="ctext">Thinking <b>+ doing</b> &mdash; it uses tools to take action and finish the job.</span></div>
+      </div>
+      <p class="takeaway r" style="margin-top:30px;text-align:center;">Claude Code is an agent: it doesn't just answer &mdash; it <b>writes, runs and fixes</b> your app.</p>
+    </div>
+    <div class="foot"><span>From a smart answer to real work done</span></div>
+  </section>
+
+  <!-- 10d · AGENT EXAMPLE -->
+  <section class="slide panel">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">AI agents</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <h2 class="r" style="text-align:center;max-width:none;">An agent in action</h2>
+      <div class="underline r" style="margin:18px auto 0;"></div>
+      <div class="flow3 r">
+        <div class="fnode"><div class="fk">Instruction</div><div class="fs">&ldquo;Follow up with at&#8209;risk clients&rdquo;</div></div>
+        <div class="farrow">&rarr;</div>
+        <div class="fnode hl"><div class="fk">The agent</div><div class="fs">brain + tools + memory + data</div></div>
+        <div class="farrow">&rarr;</div>
+        <div class="fnode"><div class="fk">Action</div><div class="fs">scores clients, drafts &amp; sends emails</div></div>
+      </div>
+      <p class="ex-line r">Under the hood, every agent has the same parts: an <b>instruction</b>, <b>tools &amp; actions</b>, <b>memory</b>, a <b>database</b> &mdash; and the model that ties them together.</p>
+    </div>
+    <div class="foot"><span>Give it a goal &mdash; it figures out the steps</span></div>
+  </section>
+
   <!-- 10a · TALK TO IT LIKE AN ENGINEER -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Prompt engineering</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -737,7 +905,7 @@
   <!-- 10 · PROMPT ENGINEERING -->
   <section class="slide panel">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Prompt engineering</span>
     </div>
     <div class="body">
@@ -757,7 +925,7 @@
   <!-- 10 · WHAT WE'LL BUILD -->
   <section class="slide hero data">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">From here on, we build</span>
     </div>
     <div class="body">
@@ -768,10 +936,28 @@
     <div class="foot"><span>Something you can click, not something you read about</span></div>
   </section>
 
+  <!-- 10e · WEB VS MOBILE -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Scope it right</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <h2 class="r" style="text-align:center;max-width:none;">Web or mobile app?</h2>
+      <p class="lead r" style="text-align:center;max-width:52ch;margin:14px auto 0;">A web app already works on phones &mdash; it's <span class="accent">mobile-responsive</span>, right in the browser. Start there.</p>
+      <div class="compare r">
+        <div class="crow"><span class="clbl">Web app (default)</span><span class="ctext"><b>Responsive by design</b> &mdash; looks and works great on phone, tablet and desktop. Ship today.</span></div>
+        <div class="crow hl"><span class="clbl">Go native only if</span><span class="ctext">you truly need to be <b>listed in the App Store / Google Play.</b></span></div>
+      </div>
+      <p class="takeaway r" style="margin-top:28px;text-align:center;">You can always ship a store app later &mdash; once you have users.</p>
+    </div>
+    <div class="foot"><span>Pick the path that gets you live fastest</span></div>
+  </section>
+
   <!-- 11 · HOW TO DEBUG -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Debugging</span>
     </div>
     <div class="body">
@@ -796,43 +982,11 @@
     <div class="foot"><span>Screenshot it &rarr; paste into Claude Code &rarr; say what you want changed</span></div>
   </section>
 
-  <!-- 13 · IDEAS -->
-  <section class="slide light">
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Ideas</span>
-    </div>
-    <div class="body">
-      <h2 class="r">Ideas to spark you</h2>
-      <div class="underline r"></div>
-      <div class="ideas2 r">
-        <div class="ic"><div class="ic-inner">
-          <div class="ic-face ic-front"><div class="ibadge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4l4 2-4 2M18 14l3 1.5-3 1.5"/></svg></div><h3>Mini CRM</h3><div class="hintp">press &rarr;</div></div>
-          <div class="ic-face ic-back"><h3>Mini CRM</h3><ul><li>Save contacts &amp; notes</li><li>See every interaction at a glance</li><li>Flag who to follow up next</li></ul></div>
-        </div></div>
-        <div class="ic"><div class="ic-inner">
-          <div class="ic-face ic-front"><div class="ibadge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M12 12l4-3"/><path d="M3 12h2M19 12h2"/><path d="M12 3v2"/></svg></div><h3>Delivery Risk Cockpit</h3><div class="hintp">press &rarr;</div></div>
-          <div class="ic-face ic-back"><h3>Delivery Risk Cockpit</h3><ul><li>Track every project in one view</li><li>Spot red flags early</li><li>Auto-score what needs attention</li></ul></div>
-        </div></div>
-        <div class="ic"><div class="ic-inner">
-          <div class="ic-face ic-front"><div class="ibadge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Expertise Finder</h3><div class="hintp">press &rarr;</div></div>
-          <div class="ic-face ic-back"><h3>Expertise Finder</h3><ul><li>Search skills across teams</li><li>Match people to needs</li><li>See who's available now</li></ul></div>
-        </div></div>
-        <div class="ic"><div class="ic-inner">
-          <div class="ic-face ic-front"><div class="ibadge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></div><h3>Proposal Factory</h3><div class="hintp">press &rarr;</div></div>
-          <div class="ic-face ic-back"><h3>Proposal Factory</h3><ul><li>Turn notes into a proposal</li><li>Consistent structure &amp; tone</li><li>Export in minutes</li></ul></div>
-        </div></div>
-      </div>
-      <p class="takeaway r" id="ideasHint" style="margin-top:30px;text-align:center;">Press &rarr; to flip each idea &mdash; or bring your own.</p>
-    </div>
-    <div class="foot"><span>Keep it small enough to finish in two hours</span></div>
-  </section>
-
   <!-- 13b · GO FURTHER WITH AI -->
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Go further</span>
     </div>
     <div class="body" style="justify-content:center;">
@@ -850,7 +1004,7 @@
   <!-- 13c · WITH / WITHOUT AI (Mini CRM example) -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Example &middot; Mini CRM</span>
     </div>
     <div class="body" style="justify-content:center;">
@@ -867,7 +1021,7 @@
   <section class="slide hero">
     <div class="motif"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Your turn</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -896,7 +1050,7 @@
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Claude Code setup</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -911,7 +1065,7 @@
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Claude Code setup</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -926,7 +1080,7 @@
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Claude Code setup</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -941,7 +1095,7 @@
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Step 1 &middot; Kick it off</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
@@ -955,7 +1109,7 @@
   <!-- 12 · THE IQ METHOD -->
   <section class="slide panel">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">The IQ method</span>
     </div>
     <div class="body">
@@ -974,8 +1128,8 @@
           <p class="takeaway" style="margin-top:24px;"><b>Clear in, quality out.</b></p>
         </div>
         <div class="r">
-          <div class="shot"><img src="masterprompt-userflow.webp" alt="Master prompt chat with live user flow" /></div>
-          <div class="caption">Describe it on the left, the flow takes shape on the right.</div>
+          <div class="shot"><img src="master-prompt-spec.png" alt="Writing a master prompt in Claude Code" /></div>
+          <div class="caption">Describe what you want in plain words &mdash; Claude Code turns it into the app.</div>
         </div>
       </div>
     </div>
@@ -985,7 +1139,7 @@
   <!-- 15a · MASTER PROMPT WALKTHROUGH · PART 1 -->
   <section class="slide light">
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Build &middot; Master Prompt</span>
     </div>
     <div class="body">
@@ -1014,7 +1168,7 @@
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
       <span class="tag">Build &middot; The loop</span>
     </div>
     <div class="body" style="justify-content:center;">
@@ -1052,7 +1206,47 @@
       </div>
       <p class="lead r" style="text-align:center;margin-top:4px;color:#fff;font-weight:400;">So &mdash; what will you build?</p>
     </div>
-    <div class="foot"><span>Capgemini &times; IQ &middot; AI Product Crafting Lab</span></div>
+    <div class="foot"><span>Spacefill &times; IQ &middot; AI Product Crafting Lab</span></div>
+  </section>
+
+  <!-- 17b · RESOURCES -->
+  <section class="slide panel">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Resources</span>
+    </div>
+    <div class="body">
+      <h2 class="r">Everything you'll need</h2>
+      <div class="underline r"></div>
+      <div class="grid g3 r" style="margin-top:26px;">
+        <div class="card"><h3>Master Prompt</h3><p>Write the perfect prompt</p><div class="ex">IQ Project &middot; Master Prompt GPT</div></div>
+        <div class="card"><h3>Core Feature Finder</h3><p>Pin down the one feature</p><div class="ex">IQ Project &middot; Core Feature GPT</div></div>
+        <div class="card"><h3>Supabase</h3><p>Free database &amp; auth</p><div class="ex">supabase.com</div></div>
+        <div class="card"><h3>Dribbble</h3><p>Design inspiration &mdash; screenshot it</p><div class="ex">dribbble.com</div></div>
+        <div class="card"><h3>Colour codes</h3><p>Pick two colours for your theme</p><div class="ex">htmlcolorcodes.com</div></div>
+        <div class="card"><h3>Cloudinary</h3><p>Store images &amp; assets</p><div class="ex">cloudinary.com</div></div>
+      </div>
+    </div>
+    <div class="foot"><span>Links also live in the IQ platform</span></div>
+  </section>
+
+  <!-- 17c · STATUS BOARD -->
+  <section class="slide panel">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Stay unblocked</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <h2 class="r" style="text-align:center;max-width:none;">Your status board</h2>
+      <p class="lead r" style="text-align:center;max-width:42ch;margin:14px auto 0;">Tell us where you're at &mdash; we'll jump in fast.</p>
+      <div class="grid g4 r" style="margin-top:28px;">
+        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#9989;</div><h3 style="margin-top:8px;">Done</h3><p>It works</p></div>
+        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#128260;</div><h3 style="margin-top:8px;">In progress</h3><p>Still building</p></div>
+        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#10060;</div><h3 style="margin-top:8px;">Not working</h3><p>Something's off</p></div>
+        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#127982;</div><h3 style="margin-top:8px;">Stuck</h3><p>Call a coach</p></div>
+      </div>
+    </div>
+    <div class="foot"><span>No one stays blocked &mdash; raise a flag</span></div>
   </section>
 
   <!-- 18 · LIVE CHALLENGE TIMER -->
@@ -1075,13 +1269,12 @@
           <div class="tl-coaches-lbl">Your coaches &middot; call us anytime</div>
           <div class="tl-faces">
             <div class="tl-face"><img src="teo-dagher.png" alt="Teo Dagher" /><span>Teo Dagher</span></div>
-            <div class="tl-face"><img src="teo-paquet.jpeg" alt="Teo Paquet" /><span>Teo Paquet</span></div>
-            <div class="tl-face"><img src="arman.jpeg" alt="Arman Amini" /><span>Arman Amini</span></div>
+            <div class="tl-face"><img src="images/nathan.jpeg" alt="Nathan Gatto" /><span>Nathan Gatto</span></div>
           </div>
         </div>
       </div>
       <div class="tl-right r">
-        <div class="logo-chip biglogo"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></div>
+        <div class="logo-chip biglogo"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></div>
         <span class="kicker" style="margin-bottom:10px;">Time to build</span>
         <div class="bigclock" id="bigClock">--:--</div>
         <div class="clocksub" id="clockSub">until 12:00</div>
@@ -1249,6 +1442,27 @@
     ideaCards.forEach((c,k)=>c.classList.toggle('open', k===iStep-1));
     if(ideasHint) ideasHint.style.opacity = iStep>=IDEAS_N ? '0' : '1';
   }
+  // Geniuses — reveal one name per click; show the takeaway once all are revealed
+  let genIdx=[...slides].findIndex(s=>s.querySelector('.genius'));
+  const genCards=genIdx>=0?[...slides[genIdx].querySelectorAll('.genius')]:[];
+  const GEN_N=genCards.length;
+  let genStep=0;
+  const genHint=document.getElementById('genHint'), genTake=document.getElementById('genTake');
+  function genShow(){
+    if(genIdx<0)return;
+    genCards.forEach((c,k)=>c.classList.toggle('shown', k<genStep));
+    if(genHint) genHint.style.opacity = genStep>=GEN_N ? '0' : '1';
+    if(genTake) genTake.style.opacity = genStep>=GEN_N ? '1' : '0';
+  }
+  // Kiwi — reveal the answer on click
+  let kiwiIdx=[...slides].findIndex(s=>s.querySelector('.kiwi-reveal'));
+  let kiwiOpen=false;
+  const kiwiHint=document.getElementById('kiwiHint');
+  function kiwiShow(){
+    if(kiwiIdx<0)return;
+    slides[kiwiIdx].querySelectorAll('.kiwi-reveal').forEach(rb=>rb.classList.toggle('show', kiwiOpen));
+    if(kiwiHint) kiwiHint.style.opacity = kiwiOpen ? '0' : '1';
+  }
   function briefShow(){
     briefRows.forEach((r,p)=>{
       r.classList.toggle('show', bStep >= 2*p+1);
@@ -1290,6 +1504,8 @@
     if(i===briefIdx && pv!==briefIdx){ bStep = pv>i ? BRIEF_MAX : 0; }
     if(i===craftIdx && pv!==craftIdx){ cMerged = pv>i; craftShow(); }
     if(i===ideasIdx && pv!==ideasIdx){ iStep = pv>i ? IDEAS_N : 0; ideasShow(); }
+    if(i===genIdx && pv!==genIdx){ genStep = pv>i ? GEN_N : 0; genShow(); }
+    if(i===kiwiIdx && pv!==kiwiIdx){ kiwiOpen = pv>i; kiwiShow(); }
     if(pv===llmIdx && i!==llmIdx){ llmFocus=false; centerGraph(false); }
     if(i===llmIdx && pv!==llmIdx){
       if(pv>i){ llmFocus=true; clearTimeout(llmSettle); llmSettle=setTimeout(function(){ if(llmFocus&&i===llmIdx) centerGraph(true); },480); }
@@ -1302,6 +1518,8 @@
     if(i===briefIdx && bStep<BRIEF_MAX){ bStep++; briefShow(); return; }
     if(i===craftIdx && !cMerged){ cMerged=true; craftShow(); return; }
     if(i===ideasIdx && iStep<IDEAS_N){ iStep++; ideasShow(); return; }
+    if(i===genIdx && genStep<GEN_N){ genStep++; genShow(); return; }
+    if(i===kiwiIdx && !kiwiOpen){ kiwiOpen=true; kiwiShow(); return; }
     if(i===llmIdx && !llmFocus){ llmFocus=true; centerGraph(true); return; }
     go(i+1);
   }
@@ -1309,6 +1527,8 @@
     if(i===briefIdx && bStep>0){ bStep--; briefShow(); return; }
     if(i===craftIdx && cMerged){ cMerged=false; craftShow(); return; }
     if(i===ideasIdx && iStep>0){ iStep--; ideasShow(); return; }
+    if(i===genIdx && genStep>0){ genStep--; genShow(); return; }
+    if(i===kiwiIdx && kiwiOpen){ kiwiOpen=false; kiwiShow(); return; }
     if(i===llmIdx && llmFocus){ llmFocus=false; centerGraph(false); return; }
     go(i-1);
   }
