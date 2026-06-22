@@ -54,11 +54,11 @@
   .tbg2{background-image:url('timer-bg-2.png');opacity:0;animation:tbgfade 50s ease-in-out infinite;}
   @keyframes tbgfade{0%,30%{opacity:0;}50%,80%{opacity:1;}100%{opacity:0;}}
 
-  /* Debugging slide — real screenshots: capture website → paste into Codex (looping) */
+  /* Debugging slide — real screenshots: capture website → paste into Claude Code (looping) */
   .dbg{position:relative;width:1180px;max-width:100%;height:402px;margin:14px auto 0;}
   .dwin{position:absolute;top:16px;border-radius:12px;overflow:hidden;border:1px solid #2a3645;background:#0e1521;box-shadow:0 24px 50px -18px rgba(0,0,0,.7);}
   .dbg-app{left:0;width:548px;}
-  .dbg-codex{right:0;width:560px;}
+  .dbg-agent{right:0;width:560px;}
   .dwin-bar{height:30px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#0e1521;border-bottom:1px solid #1f2937;}
   .dwin-bar i{width:10px;height:10px;border-radius:50%;background:#3a4658;display:block;}
   .dwin-bar .url{margin-left:10px;font-size:11.5px;color:var(--muted);letter-spacing:.02em;}
@@ -145,7 +145,7 @@
   .vstage:hover .vseek-knob,.vstage.paused .vseek-knob{opacity:1;}
   .vtime{font-size:12.5px;color:#fff;opacity:.9;flex:0 0 auto;letter-spacing:.02em;font-variant-numeric:tabular-nums;}
 
-  /* Codex kickoff step slides */
+  /* Claude Code kickoff step slides */
   .cxprog{display:flex;align-items:center;gap:9px;flex:0 0 auto;}
   .cxprog .cxnum{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:700;flex:0 0 auto;}
   .cxprog .cxnum.on{background:var(--deep);border-color:var(--deep);color:#fff;}
@@ -615,26 +615,26 @@
     <div class="foot"><span>One promise &rarr; one action &rarr; one feature</span></div>
   </section>
 
-  <!-- 9 · MEET CODEX -->
+  <!-- 9 · MEET CLAUDE CODE -->
   <section class="slide light">
     <div class="top">
       <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Meet Codex</span>
+      <span class="tag">Meet Claude Code</span>
     </div>
     <div class="body">
       <div class="split">
         <div>
-          <img src="codex-logo.png" alt="Codex" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
-          <h2 class="r">Meet Codex</h2>
+          <img src="claude-logo.png" alt="Claude Code" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
+          <h2 class="r">Meet Claude Code</h2>
           <div class="underline r"></div>
-          <p class="lead r">Codex builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
+          <p class="lead r">Claude Code builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
           <ul class="points r" style="margin-top:22px;">
             <li><span class="tick"></span><span>You describe in plain words; it writes, runs and fixes the app.</span></li>
             <li><span class="tick"></span><span>You stay the decision-maker, what gets built, and why.</span></li>
           </ul>
         </div>
         <div class="r">
-          <div class="shot"><img src="codex-screenshot.jpg" alt="The Codex build app" /></div>
+          <div class="shot"><img src="claude-code-screenshot.jpg" alt="The Claude Code app" /></div>
           <div class="caption">Open it, type what you want, and start building.</div>
         </div>
       </div>
@@ -697,7 +697,7 @@
       <span class="tag">Debugging</span>
     </div>
     <div class="body">
-      <h2 class="r" style="font-size:38px;margin-bottom:0;">Show Codex what you mean.</h2>
+      <h2 class="r" style="font-size:38px;margin-bottom:0;">Show Claude Code what you mean.</h2>
       <div class="dbg r">
         <div class="dwin dbg-app">
           <div class="dwin-bar"><i></i><i></i><i></i><span class="url">conduit.app</span></div>
@@ -706,8 +706,8 @@
           <div class="flash"></div>
         </div>
         <div class="dbg-thumb"><img src="website-demo.png" alt="" /></div>
-        <div class="dwin dbg-codex">
-          <img class="shotimg" src="codex-screenshot.jpg" alt="The Codex app where you write" />
+        <div class="dwin dbg-agent">
+          <img class="shotimg" src="claude-code-screenshot.jpg" alt="The Claude Code app where you write" />
           <div class="cx-overlay">
             <span class="cx-attach"><span class="px"></span> screenshot.png</span>
             <div class="cx-msg">Make the <b>Sign&#8209;up</b> button bigger and use our orange<span class="cx-cursor"></span></div>
@@ -715,7 +715,7 @@
         </div>
       </div>
     </div>
-    <div class="foot"><span>Screenshot it &rarr; paste into Codex &rarr; say what you want changed</span></div>
+    <div class="foot"><span>Screenshot it &rarr; paste into Claude Code &rarr; say what you want changed</span></div>
   </section>
 
   <!-- 13 · IDEAS -->
@@ -796,7 +796,7 @@
       <span class="kicker r">Two hours &middot; four steps &middot; one working product</span>
       <h1 class="r" style="margin:6px 0 0;font-size:58px;">Let's build</h1>
       <div class="tlwrap r">
-        <svg viewBox="0 0 1240 250" role="img" aria-label="Two-hour build timeline from 10:00 to 12:00: Codex setup 5 minutes, Master Prompt and Flow, Build the core feature 60 minutes, Iterate 30 minutes">
+        <svg viewBox="0 0 1240 250" role="img" aria-label="Two-hour build timeline from 10:00 to 12:00: Claude Code setup 5 minutes, Master Prompt and Flow, Build the core feature 60 minutes, Iterate 30 minutes">
           <defs>
             <linearGradient id="tlg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
           </defs>
@@ -804,7 +804,7 @@
             <rect x="83" y="100" width="124" height="92" rx="9" fill="#172234" stroke="rgba(249,115,22,.38)" stroke-width="1.4"/>
             <rect x="92" y="103" width="106" height="4" rx="2" fill="url(#tlg)"/>
             <text x="99" y="130" fill="#fb923c" font-size="13" font-weight="700">1</text>
-            <text x="145" y="150" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">Codex setup</text>
+            <text x="145" y="150" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="600">Claude Code setup</text>
             <text x="145" y="172" text-anchor="middle" fill="#9ca3af" font-size="12">~5 min</text>
           </g>
           <g>
@@ -848,37 +848,34 @@
     <div class="foot"><span>From idea to something real</span></div>
   </section>
 
-  <!-- 15pre0 · CODEX PROJECT SETUP -->
+  <!-- 15pre0 · GET THE BOILERPLATE -->
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
       <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Codex setup</span>
+      <span class="tag">Claude Code setup</span>
     </div>
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
-      <h2 class="r" style="max-width:none;font-size:42px;">Codex project setup</h2>
-      <p class="lead r" style="margin-top:6px;">Add the Capgemini boilerplate to Codex.</p>
-      <div class="kickvid r" style="max-width:760px;margin-top:18px;"><video src="add-boilerplate.mp4" class="autoloop" autoplay loop muted playsinline></video></div>
+      <h2 class="r" style="max-width:none;font-size:42px;">Get the boilerplate</h2>
+      <p class="lead r" style="margin-top:6px;">Download the project boilerplate from GitHub.</p>
+      <div class="kickvid r" style="max-width:760px;margin-top:18px;"><video src="github-download-boilerplate.mp4" class="autoloop" autoplay loop muted playsinline></video></div>
     </div>
-    <div class="foot"><span>Point Codex at the boilerplate, then kick it off</span></div>
+    <div class="foot"><span>Grab the boilerplate from GitHub, then open it in Claude Code</span></div>
   </section>
 
-  <!-- 16a · CODEX KICKOFF · STEP 1 (approval mode) -->
-  <section class="slide light">
+  <!-- 16a · OPEN IT IN CLAUDE CODE -->
+  <section class="slide hero">
+    <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
     <div class="top">
       <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Codex setup</span>
+      <span class="tag">Claude Code setup</span>
     </div>
-    <div class="body">
-      <div class="r" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;">
-        <div>
-          <div class="stepflag"><span class="bar"></span>Codex setup</div>
-          <h2 style="font-size:32px;max-width:30ch;">Choose the approval mode</h2>
-        </div>
-      </div>
-      <div class="cxstage r"><img class="cxshot" src="codex-step-1.png" alt="Codex — choose the approval mode" /></div>
+    <div class="body" style="justify-content:center;align-items:center;text-align:center;">
+      <h2 class="r" style="max-width:none;font-size:42px;">Open it in Claude Code</h2>
+      <p class="lead r" style="margin-top:6px;">Point Claude Code at the boilerplate folder.</p>
+      <div class="kickvid r" style="max-width:760px;margin-top:18px;"><video src="claude-code-open-folder.mp4" class="autoloop" autoplay loop muted playsinline></video></div>
     </div>
-    <div class="foot"><span>Decide how much Codex can do on its own</span></div>
+    <div class="foot"><span>Open the folder, then kick it off</span></div>
   </section>
 
   <!-- 15pre · KICK OFF IN THE BACKGROUND -->
@@ -954,52 +951,6 @@
     <div class="foot"><span>How to write your Master Prompt &middot; Part 1</span></div>
   </section>
 
-  <!-- 16d · CODEX KICKOFF · STEP 4 -->
-  <section class="slide light">
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Codex kickoff</span>
-    </div>
-    <div class="body">
-      <div class="r" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;">
-        <div>
-          <div class="stepflag"><span class="bar"></span>Codex kickoff</div>
-          <h2 style="font-size:32px;max-width:30ch;">Codex builds &amp; opens a preview</h2>
-        </div>
-      </div>
-      <div class="cxstage r"><img class="cxshot" src="codex-step-4.png" alt="Codex builds and opens a preview" /></div>
-    </div>
-    <div class="foot"><span>It installs, runs, checks, and shows your app</span></div>
-  </section>
-
-  <!-- 16b · CODEX KICKOFF · VIDEO (STEP 5) -->
-  <section class="slide light">
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="capgemini-wordmark.png" alt="Capgemini" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Build &middot; Step 2 &middot; Codex kickoff</span>
-    </div>
-    <div class="body">
-      <div class="r" style="display:flex;align-items:flex-end;justify-content:space-between;gap:28px;">
-        <div>
-          <div class="stepflag"><span class="bar"></span>Master Prompt</div>
-          <h2 style="font-size:32px;max-width:30ch;">Paste your Master Prompt in Codex</h2>
-        </div>
-        <div class="caption" style="margin:0;max-width:30ch;text-align:right;flex:0 0 auto;">Play, pause, or scrub back anytime.</div>
-      </div>
-      <div class="vstage paused r">
-        <video src="codex-step5.mp4" poster="codex-step5.jpg" preload="metadata" playsinline muted></video>
-        <div class="vbar">
-          <button class="vbtn vtoggle" aria-label="Play or pause"><svg class="ic-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="ic-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
-          <span class="vtime cur">0:00</span>
-          <div class="vseek"><div class="vseek-fill"></div><div class="vseek-knob"></div></div>
-          <span class="vtime dur">0:00</span>
-          <button class="vbtn vrestart" aria-label="Restart"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></button>
-        </div>
-      </div>
-    </div>
-    <div class="foot"><span>From first prompt to a live preview</span></div>
-  </section>
-
   <!-- 17 · BUILD → LOOP (core feature + iterate, combined) -->
   <section class="slide hero">
     <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
@@ -1053,7 +1004,7 @@
       <div class="tl-left r">
         <div class="tl-kicker">Today's flow</div>
         <ol class="tl-steps">
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Codex setup &amp; <b>/kickoff</b></span><span class="tl-time">10:00 &middot; ~5 min</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Claude Code setup &amp; <b>/kickoff</b></span><span class="tl-time">10:00 &middot; ~5 min</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Master Prompt &amp; Flow &mdash; chat it through</span><span class="tl-time">10:05 &rarr; 10:30 &middot; up to 30 min</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Paste the Master Prompt &amp; wait for the first preview</span><span class="tl-time">10:30</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Build the core feature</span><span class="tl-time">10:30 &rarr; 11:30</span></div></li>
