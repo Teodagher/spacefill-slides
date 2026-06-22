@@ -1,0 +1,83 @@
+<!--
+  ARCHIVED slides — removed from the live deck (index.html) but kept for future sessions.
+  To restore one, paste its <section> back into index.html where you want it.
+-->
+
+  <!-- BUILD → LOOP (core feature + iterate, combined) · archived from Session 1 -->
+  <section class="slide hero">
+    <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Build &middot; The loop</span>
+    </div>
+    <div class="body" style="justify-content:center;">
+      <h2 class="r" style="text-align:center;max-width:none;font-size:40px;">Build it. Then loop.</h2>
+      <div class="loopwrap r">
+        <svg viewBox="0 0 1100 350" role="img" aria-label="Flowchart: Build it, See it run, Good enough? If no, ask for the next thing and loop back; if yes, Ship it">
+          <defs>
+            <marker id="afwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a97a8"/></marker>
+            <marker id="aloop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f97316"/></marker>
+          </defs>
+          <path d="M235 150 H319" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
+          <path d="M505 150 H589" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
+          <path d="M773 150 H857" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
+          <text x="816" y="140" text-anchor="middle" fill="#9ca3af" font-size="12.5" font-weight="600">Yes</text>
+          <path d="M685 208 V300 H145 V182" fill="none" stroke="#f97316" stroke-width="2.4" marker-end="url(#aloop)"/>
+          <rect x="298" y="287" width="234" height="26" rx="7" fill="#0e1521" stroke="#1f2937"/>
+          <text x="415" y="304" text-anchor="middle" font-size="12.5"><tspan fill="#fb923c" font-weight="700">No</tspan><tspan fill="#cbd5e1"> &mdash; ask for the next thing</tspan></text>
+          <g>
+            <rect x="55" y="118" width="180" height="64" rx="9" fill="#1f2937" stroke="#3a4658" stroke-width="1.5"/>
+            <text x="145" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="500">Build it</text>
+          </g>
+          <g>
+            <rect x="325" y="118" width="180" height="64" rx="9" fill="#1f2937" stroke="#3a4658" stroke-width="1.5"/>
+            <text x="415" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="500">See it run</text>
+          </g>
+          <g>
+            <polygon points="685,92 773,150 685,208 597,150" fill="#1f2937" stroke="#f97316" stroke-width="1.8"/>
+            <text x="685" y="155" text-anchor="middle" fill="#fff" font-size="15.5" font-weight="500">Good enough?</text>
+          </g>
+          <g>
+            <rect x="865" y="118" width="175" height="64" rx="9" fill="rgba(249,115,22,.16)" stroke="#f97316" stroke-width="1.6"/>
+            <text x="952" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="600">Ship it</text>
+          </g>
+        </svg>
+      </div>
+      <p class="lead r" style="text-align:center;margin-top:4px;color:#fff;font-weight:400;">So &mdash; what will you build?</p>
+    </div>
+    <div class="foot"><span>Spacefill &times; IQ &middot; AI Product Crafting Lab</span></div>
+  </section>
+
+  <!-- PROMPTING IS DELEGATION · archived from Session 1 (prompt-engineering, for next session) -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Prompt engineering</span>
+    </div>
+    <div class="body" style="justify-content:center;align-items:center;text-align:center;">
+      <h2 class="r" style="max-width:none;">Prompting is delegation</h2>
+      <div class="underline r" style="margin:18px auto 0;"></div>
+      <p class="lead r" style="text-align:center;max-width:30ch;margin:32px auto 0;font-size:27px;">Brief the AI like you'd brief an engineer &mdash; <span class="accent">it performs like the person you ask it to be.</span></p>
+    </div>
+    <div class="foot"><span>Clear in, quality out, same as any delegation</span></div>
+  </section>
+
+  <!-- PROMPT ENGINEERING (interactive brief reveal) · archived from Session 1 (for next session) -->
+  <section class="slide panel">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Prompt engineering</span>
+    </div>
+    <div class="body">
+      <h2 class="r">Prompt Engineering</h2>
+      <div class="underline r"></div>
+      <div class="brief2 r">
+        <div class="row"><span class="k">CONTEXT</span><span class="d">&ldquo;We track clients in a mini CRM, but follow-ups slip.&rdquo;</span></div>
+        <div class="row"><span class="k">TASK</span><span class="d">&ldquo;Add an AI score that flags which client to call next.&rdquo;</span></div>
+        <div class="row"><span class="k">GUIDELINES</span><span class="d">&ldquo;Show the score on each client, sorted by urgency.&rdquo;</span></div>
+        <div class="row"><span class="k">CONSTRAINTS</span><span class="d">&ldquo;One screen. Use only the CRM data.&rdquo;</span></div>
+      </div>
+      <div class="brief-hint r" id="briefHint">Press &rarr; to reveal each part of the brief</div>
+    </div>
+    <div class="foot"><span>Role &middot; Context &middot; Task &middot; Guidelines &middot; Constraints</span></div>
+  </section>

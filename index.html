@@ -161,13 +161,61 @@
   .tlwrap svg{width:min(1150px,100%);height:auto;}
   .tlwrap svg text{font-family:inherit;}
 
-  /* Day 1 pipeline — 7 numbered steps with arrows between */
-  .pipe{display:flex;align-items:stretch;justify-content:center;gap:5px;margin-top:34px;width:100%;flex-wrap:nowrap;}
-  .pstep{flex:1 1 0;min-width:0;background:#172234;border:1px solid rgba(249,115,22,.30);border-top:3px solid var(--deep);border-radius:11px;padding:16px 13px;display:flex;flex-direction:column;text-align:left;}
-  .pstep .pn{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--deep);}
-  .pstep .pt{font-size:14.5px;font-weight:600;color:#fff;margin-top:8px;line-height:1.22;}
-  .pstep .ps{font-size:11px;font-weight:300;color:var(--muted);margin-top:6px;line-height:1.32;word-break:break-word;}
-  .parrow{flex:0 0 auto;align-self:center;color:var(--deep);font-size:17px;font-weight:300;}
+  /* Day 1 pipeline — clean professional milestone timeline */
+  .tline{position:relative;width:100%;max-width:1200px;margin:48px auto 0;}
+  .tline-rail{position:absolute;top:20px;left:7%;right:7%;height:2px;background:linear-gradient(90deg,#fb923c,#ea580c);opacity:.45;z-index:0;}
+  .tline-steps{position:relative;z-index:1;display:flex;justify-content:space-between;}
+  .tline-step{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;}
+  .tline-dot{width:42px;height:42px;border-radius:50%;background:#000;border:2px solid var(--deep);color:#fb923c;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-variant-numeric:tabular-nums;}
+  .tline-step.first .tline-dot{background:var(--grad);border-color:var(--deep);color:#fff;box-shadow:0 0 0 5px rgba(249,115,22,.15);}
+  .tline-t{margin-top:16px;font-size:14.5px;font-weight:600;color:#fff;line-height:1.25;}
+  .tline-s{margin-top:5px;font-size:11px;font-weight:300;color:var(--muted);line-height:1.32;}
+
+  /* Resource card logos */
+  .rlogo{height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .rlogo img{max-height:44px;max-width:90%;width:auto;object-fit:contain;display:block;}
+
+  /* Roadmap — S1..S8 milestone timeline with cards */
+  .rmap{position:relative;width:100%;margin-top:30px;}
+  .rmap-rail{position:absolute;top:40px;left:6%;right:6%;height:2px;background:rgba(255,255,255,.22);z-index:0;}
+  .rmap-cols{position:relative;z-index:1;display:flex;gap:11px;align-items:flex-start;}
+  .rmap-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;}
+  .rmap-s{font-size:15px;font-weight:700;color:#fff;margin-bottom:9px;letter-spacing:.02em;}
+  .rmap-col.today .rmap-s{color:var(--vibrant);}
+  .rmap-dot{width:15px;height:15px;border-radius:50%;background:#0b0b0c;border:2px solid var(--deep);margin-bottom:16px;flex:0 0 auto;}
+  .rmap-col.today .rmap-dot{background:var(--grad);box-shadow:0 0 0 4px rgba(249,115,22,.18);}
+  .rmap-col.async .rmap-dot{border-color:#60a5fa;}
+  .rmap-card{width:100%;border-radius:12px;padding:14px 13px;background:#1f2937;border:1px solid var(--line);min-height:158px;text-align:left;}
+  .rmap-card.today{background:rgba(249,115,22,.13);border-color:var(--deep);}
+  .rmap-card.async{background:rgba(96,165,250,.10);border-color:rgba(96,165,250,.45);}
+  .rmap-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#60a5fa;margin-bottom:6px;}
+  .rmap-card.today .rmap-tag{color:var(--vibrant);}
+  .rmap-title{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:9px;line-height:1.2;}
+  .rmap-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .rmap-card li{position:relative;padding-left:13px;font-size:11.5px;font-weight:300;color:#cbd5e1;line-height:1.3;}
+  .rmap-card li::before{content:'';position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:var(--vibrant);}
+  .rmap-card.async li::before{background:#60a5fa;}
+
+  /* AI vs Agent — horizontal visual comparison */
+  .agentcmp{display:flex;align-items:stretch;justify-content:center;gap:0;margin:38px auto 0;width:100%;max-width:1020px;}
+  .acard{flex:1 1 0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 28px 32px;background:#111827;border:1px solid var(--line);}
+  .acard.left{border-radius:18px 0 0 18px;}
+  .acard.hl{border-radius:0 18px 18px 0;background:rgba(249,115,22,.10);border-color:var(--deep);border-left:none;}
+  .ac-ico{width:84px;height:84px;border-radius:50%;background:#0b0b0c;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .acard.hl .ac-ico{border-color:var(--deep);background:rgba(249,115,22,.12);}
+  .ac-ico svg{width:42px;height:42px;fill:none;stroke:#9ca3af;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .acard.hl .ac-ico svg{stroke:var(--vibrant);}
+  .ac-h{font-size:25px;font-weight:700;color:#fff;}
+  .acard.hl .ac-h{color:#fb923c;}
+  .ac-sub{font-size:14.5px;color:var(--muted);margin-top:5px;}
+  .ac-sub b{color:#fb923c;font-weight:600;}
+  .ac-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px;}
+  .ac-chip{font-size:12.5px;color:#cbd5e1;background:#1f2937;border:1px solid var(--line);border-radius:8px;padding:7px 12px;}
+  .acard.hl .ac-chip{background:rgba(249,115,22,.13);border-color:rgba(249,115,22,.4);color:#fde3c8;}
+  .ac-mid{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:108px;color:var(--deep);z-index:2;}
+  .ac-mid .ac-plus{font-size:30px;font-weight:300;line-height:1;}
+  .ac-mid .ac-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  .ac-mid .ac-arrow{font-size:26px;color:var(--deep);margin-top:6px;}
 
   /* Click-to-reveal: geniuses (names) + kiwi (answer) */
   .reveal-hint{font-size:13px;color:var(--muted);letter-spacing:.04em;transition:opacity .3s ease;}
@@ -548,15 +596,42 @@
     <div class="body">
       <h2 class="r">8 sessions to nail it</h2>
       <div class="underline r"></div>
-      <div class="grid g4 r" style="margin-top:26px;">
-        <div class="card" style="background:rgba(249,115,22,.12);border-color:var(--deep);"><div class="role">Session 1 &middot; Today</div><h3>Start</h3><p>User flow, master prompt, first shot</p></div>
-        <div class="card"><div class="role">Session 2</div><h3>Core feature</h3><p>Prompting &amp; iteration</p></div>
-        <div class="card"><div class="role">Session 3</div><h3>APIs &amp; MCP</h3><p>Connect real data</p></div>
-        <div class="card"><div class="role">Session 4</div><h3>Skills &amp; agents</h3><p>Advanced Claude Code</p></div>
-        <div class="card"><div class="role">Session 5</div><h3>Make it stronger</h3><p>Polish &amp; level up your product</p></div>
-        <div class="card"><div class="role">Session 6</div><h3>Deployment</h3><p>Ship it live</p></div>
-        <div class="card"><div class="role">Session 7</div><h3>Pitching</h3><p>Present your product</p></div>
-        <div class="card"><div class="role">Session 8</div><h3>Demo day</h3><p>Show it off &middot; celebrate &#127867;</p></div>
+      <div class="rmap r">
+        <div class="rmap-rail"></div>
+        <div class="rmap-cols">
+          <div class="rmap-col today">
+            <div class="rmap-s">S1</div><div class="rmap-dot"></div>
+            <div class="rmap-card today"><div class="rmap-tag">Today</div><div class="rmap-title">Start</div><ul><li>User flow</li><li>Master Prompt</li><li>First shot</li></ul></div>
+          </div>
+          <div class="rmap-col">
+            <div class="rmap-s">S2</div><div class="rmap-dot"></div>
+            <div class="rmap-card"><div class="rmap-title">Core feature</div><ul><li>Prompting</li><li>Iteration</li></ul></div>
+          </div>
+          <div class="rmap-col">
+            <div class="rmap-s">S3</div><div class="rmap-dot"></div>
+            <div class="rmap-card"><div class="rmap-title">APIs &amp; MCP</div><ul><li>Connect real data</li><li>Iteration</li></ul></div>
+          </div>
+          <div class="rmap-col">
+            <div class="rmap-s">S4</div><div class="rmap-dot"></div>
+            <div class="rmap-card"><div class="rmap-title">Skills &amp; agents</div><ul><li>Advanced Claude Code</li><li>Iteration</li></ul></div>
+          </div>
+          <div class="rmap-col async">
+            <div class="rmap-s">S5</div><div class="rmap-dot"></div>
+            <div class="rmap-card async"><div class="rmap-tag">Async</div><div class="rmap-title">Make it stronger</div><ul><li>Polish &amp; UX</li><li>Level up</li></ul></div>
+          </div>
+          <div class="rmap-col">
+            <div class="rmap-s">S6</div><div class="rmap-dot"></div>
+            <div class="rmap-card"><div class="rmap-title">Deployment</div><ul><li>Ship it live</li><li>DNS &amp; perf</li></ul></div>
+          </div>
+          <div class="rmap-col async">
+            <div class="rmap-s">S7</div><div class="rmap-dot"></div>
+            <div class="rmap-card async"><div class="rmap-tag">Async</div><div class="rmap-title">Pitching</div><ul><li>Present your product</li><li>First users</li></ul></div>
+          </div>
+          <div class="rmap-col">
+            <div class="rmap-s">S8</div><div class="rmap-dot"></div>
+            <div class="rmap-card"><div class="rmap-title">Demo day</div><ul><li>Show it off</li><li>Celebrate &#127867;</li></ul></div>
+          </div>
+        </div>
       </div>
       <p class="takeaway r" style="margin-top:24px;text-align:center;">Today is <b>Session 1</b> &mdash; from idea to your first working screen.</p>
     </div>
@@ -584,6 +659,30 @@
       <p class="lead r" style="margin-top:22px;">"Submit a ticket and wait six weeks" has become <span class="accent">"describe it and have it today."</span> And with AI, a real build that took ~3 hours now takes ~1.</p>
     </div>
     <div class="foot"><span>You no longer need to be a coder</span></div>
+  </section>
+
+  <!-- 3b · AI WRITES THE CODE -->
+  <section class="slide light">
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Building with AI</span>
+    </div>
+    <div class="body">
+      <h2 class="r">And AI writes more of the code every day</h2>
+      <div class="underline r"></div>
+      <div class="stat-flex r" style="margin-top:28px;">
+        <div class="stat-row">
+          <div class="stat">30%</div>
+          <div class="stat-side">
+            <div class="big">of all new code at <span style="color:var(--deep);">Google</span> is already written by AI &mdash; and climbing fast.</div>
+          </div>
+        </div>
+        <div class="dotgrid" id="dotgrid2" aria-hidden="true"></div>
+      </div>
+      <p class="lead r" style="margin-top:22px;">That's the hard part being automated. For builders like you, AI already writes the vast majority &mdash; often <span class="accent">close to 100%</span>.</p>
+      <p class="src r">Source: Sundar Pichai, Alphabet earnings call</p>
+    </div>
+    <div class="foot"><span>The code itself is increasingly AI-written</span></div>
   </section>
 
   <!-- 4 · WHAT IS A PRODUCT -->
@@ -671,6 +770,20 @@
     <div class="foot"><span>One promise &rarr; one action &rarr; one feature</span></div>
   </section>
 
+  <!-- 7b · SECTION DIVIDER · UNDERSTAND LLM -->
+  <section class="slide hero">
+    <div class="motif"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
+    <div class="top">
+      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
+      <span class="tag">Foundations</span>
+    </div>
+    <div class="body" style="justify-content:center;align-items:center;text-align:center;">
+      <span class="kicker r">Before we build</span>
+      <h1 class="r" style="margin-top:14px;font-size:62px;max-width:18ch;">First, let's understand<br/>what an LLM is</h1>
+    </div>
+    <div class="foot"><span>A quick look under the hood</span></div>
+  </section>
+
   <!-- 8a · GENIUSES -->
   <section class="slide light">
     <div class="top">
@@ -749,6 +862,16 @@
         <div class="ai5050 kiwi-reveal" style="margin-top:10px;">AI just picks the most likely</div>
         <p class="lead kiwi-reveal" style="margin-top:4px;text-align:center;">That's how AI works &mdash; on <span class="accent">probability</span>.</p>
       </div>
+      <div class="kiwi-reveal" style="position:absolute;right:60px;bottom:62px;width:236px;z-index:4;">
+        <svg viewBox="0 0 200 118" style="width:100%;height:auto;" role="img" aria-label="probability curve, peak marked most likely">
+          <line x1="6" y1="100" x2="194" y2="100" stroke="#3a4658" stroke-width="1.5"/>
+          <path d="M12 98 C 55 96 72 26 100 26 C 128 26 145 96 188 98" fill="none" stroke="#fb923c" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="100" y1="28" x2="100" y2="100" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="100" cy="26" r="5" fill="#fb923c"/>
+          <text x="100" y="16" text-anchor="middle" fill="#fb923c" font-size="12" font-weight="700">most likely</text>
+        </svg>
+        <div style="text-align:center;font-size:10.5px;color:#9ca3af;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">probability of each answer</div>
+      </div>
     </div>
     <div class="foot"><span>Same word, two meanings &mdash; AI bets on the probable one</span></div>
   </section>
@@ -823,33 +946,6 @@
     </div>
   </section>
 
-  <!-- 9 · MEET CLAUDE CODE -->
-  <section class="slide light">
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Meet Claude Code</span>
-    </div>
-    <div class="body">
-      <div class="split">
-        <div>
-          <img src="claude-logo.png" alt="Claude Code" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
-          <h2 class="r">Meet Claude Code</h2>
-          <div class="underline r"></div>
-          <p class="lead r">Claude Code builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
-          <ul class="points r" style="margin-top:22px;">
-            <li><span class="tick"></span><span>You describe in plain words; it writes, runs and fixes the app.</span></li>
-            <li><span class="tick"></span><span>You stay the decision-maker, what gets built, and why.</span></li>
-          </ul>
-        </div>
-        <div class="r">
-          <div class="shot"><img src="claude-code-screenshot.jpg" alt="The Claude Code app" /></div>
-          <div class="caption">Open it, type what you want, and start building.</div>
-        </div>
-      </div>
-    </div>
-    <div class="foot"><span>A tireless engineer, on your terms</span></div>
-  </section>
-
   <!-- 10c · AI VS AI AGENT -->
   <section class="slide light">
     <div class="top">
@@ -858,11 +954,22 @@
     </div>
     <div class="body" style="justify-content:center;">
       <h2 class="r" style="text-align:center;max-width:none;">AI thinks. An agent <span class="accent">acts.</span></h2>
-      <div class="compare r">
-        <div class="crow"><span class="clbl">AI</span><span class="ctext">The <b>thinking</b> part &mdash; you ask, it answers. Input in, words out.</span></div>
-        <div class="crow hl"><span class="clbl">AI agent</span><span class="ctext">Thinking <b>+ doing</b> &mdash; it uses tools to take action and finish the job.</span></div>
+      <div class="agentcmp r">
+        <div class="acard left">
+          <div class="ac-ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></div>
+          <div class="ac-h">AI</div>
+          <div class="ac-sub">The <b style="color:#fff;">thinking</b> part</div>
+          <div class="ac-chips"><span class="ac-chip">You ask &rarr; it answers</span></div>
+        </div>
+        <div class="ac-mid"><div class="ac-plus">+</div><div class="ac-lbl">tools</div><div class="ac-arrow">&rarr;</div></div>
+        <div class="acard hl">
+          <div class="ac-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+          <div class="ac-h">AI Agent</div>
+          <div class="ac-sub">Thinking <b>+ doing</b></div>
+          <div class="ac-chips"><span class="ac-chip">Writes code</span><span class="ac-chip">Runs it</span><span class="ac-chip">Reads data</span><span class="ac-chip">Fixes errors</span></div>
+        </div>
       </div>
-      <p class="takeaway r" style="margin-top:30px;text-align:center;">Claude Code is an agent: it doesn't just answer &mdash; it <b>writes, runs and fixes</b> your app.</p>
+      <p class="takeaway r" style="margin-top:32px;text-align:center;">Claude Code is an agent: it doesn't just answer &mdash; it <b>writes, runs and fixes</b> your app.</p>
     </div>
     <div class="foot"><span>From a smart answer to real work done</span></div>
   </section>
@@ -888,38 +995,31 @@
     <div class="foot"><span>Give it a goal &mdash; it figures out the steps</span></div>
   </section>
 
-  <!-- 10a · TALK TO IT LIKE AN ENGINEER -->
+  <!-- 9 · MEET CLAUDE CODE -->
   <section class="slide light">
     <div class="top">
       <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Prompt engineering</span>
-    </div>
-    <div class="body" style="justify-content:center;align-items:center;text-align:center;">
-      <h2 class="r" style="max-width:none;">Prompting is delegation</h2>
-      <div class="underline r" style="margin:18px auto 0;"></div>
-      <p class="lead r" style="text-align:center;max-width:30ch;margin:32px auto 0;font-size:27px;">Brief the AI like you'd brief an engineer &mdash; <span class="accent">it performs like the person you ask it to be.</span></p>
-    </div>
-    <div class="foot"><span>Clear in, quality out, same as any delegation</span></div>
-  </section>
-
-  <!-- 10 · PROMPT ENGINEERING -->
-  <section class="slide panel">
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Prompt engineering</span>
+      <span class="tag">Meet Claude Code</span>
     </div>
     <div class="body">
-      <h2 class="r">Prompt Engineering</h2>
-      <div class="underline r"></div>
-      <div class="brief2 r">
-        <div class="row"><span class="k">CONTEXT</span><span class="d">&ldquo;We track clients in a mini CRM, but follow-ups slip.&rdquo;</span></div>
-        <div class="row"><span class="k">TASK</span><span class="d">&ldquo;Add an AI score that flags which client to call next.&rdquo;</span></div>
-        <div class="row"><span class="k">GUIDELINES</span><span class="d">&ldquo;Show the score on each client, sorted by urgency.&rdquo;</span></div>
-        <div class="row"><span class="k">CONSTRAINTS</span><span class="d">&ldquo;One screen. Use only the CRM data.&rdquo;</span></div>
+      <div class="split">
+        <div>
+          <img src="claude-logo.png" alt="Claude Code" style="width:54px;height:54px;display:block;margin-bottom:18px;" class="r" />
+          <h2 class="r">Meet Claude Code</h2>
+          <div class="underline r"></div>
+          <p class="lead r">Claude Code builds. <span class="accent">You direct.</span> Like a senior engineer who never sleeps and speaks plain English, it does the work, you make every call.</p>
+          <ul class="points r" style="margin-top:22px;">
+            <li><span class="tick"></span><span>You describe in plain words; it writes, runs and fixes the app.</span></li>
+            <li><span class="tick"></span><span>You stay the decision-maker, what gets built, and why.</span></li>
+          </ul>
+        </div>
+        <div class="r">
+          <div class="shot"><img src="claude-code-screenshot.jpg" alt="The Claude Code app" /></div>
+          <div class="caption">Open it, type what you want, and start building.</div>
+        </div>
       </div>
-      <div class="brief-hint r" id="briefHint">Press &rarr; to reveal each part of the brief</div>
     </div>
-    <div class="foot"><span>Role &middot; Context &middot; Task &middot; Guidelines &middot; Constraints</span></div>
+    <div class="foot"><span>A tireless engineer, on your terms</span></div>
   </section>
 
   <!-- 10 · WHAT WE'LL BUILD -->
@@ -1027,20 +1127,17 @@
     <div class="body" style="justify-content:center;align-items:center;text-align:center;">
       <span class="kicker r">Your Day 1 pipeline &middot; seven steps to your first build</span>
       <h1 class="r" style="margin:6px 0 0;font-size:58px;">Let's build</h1>
-      <div class="pipe r">
-        <div class="pstep"><span class="pn">01</span><span class="pt">Master Prompt</span><span class="ps">Generate it &middot; spacefill-master-prompt.vercel.app</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">02</span><span class="pt">Download boilerplate</span><span class="ps">Grab the zip from GitHub</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">03</span><span class="pt">Open the folder</span><span class="ps">In Claude Code (desktop)</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">04</span><span class="pt">Connect Supabase</span><span class="ps">Create an organization</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">05</span><span class="pt">/kickoff</span><span class="ps">Sets up in the background</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">06</span><span class="pt">User Flow</span><span class="ps">Map it in Whimsical</span></div>
-        <span class="parrow">&rarr;</span>
-        <div class="pstep"><span class="pn">07</span><span class="pt">Paste Master Prompt</span><span class="ps">Into Claude Code &mdash; and build</span></div>
+      <div class="tline r">
+        <div class="tline-rail"></div>
+        <div class="tline-steps">
+          <div class="tline-step first"><div class="tline-dot">1</div><div class="tline-t">Master Prompt</div><div class="tline-s">spacefill-master-prompt.vercel.app</div></div>
+          <div class="tline-step"><div class="tline-dot">2</div><div class="tline-t">Download boilerplate</div><div class="tline-s">Grab the zip from GitHub</div></div>
+          <div class="tline-step"><div class="tline-dot">3</div><div class="tline-t">Open the folder</div><div class="tline-s">In Claude Code</div></div>
+          <div class="tline-step"><div class="tline-dot">4</div><div class="tline-t">Connect Supabase</div><div class="tline-s">Create an organization</div></div>
+          <div class="tline-step"><div class="tline-dot">5</div><div class="tline-t">/kickoff</div><div class="tline-s">Sets up in the background</div></div>
+          <div class="tline-step"><div class="tline-dot">6</div><div class="tline-t">User Flow</div><div class="tline-s">Map it in Whimsical</div></div>
+          <div class="tline-step"><div class="tline-dot">7</div><div class="tline-t">Paste Master Prompt</div><div class="tline-s">Into Claude Code &mdash; and build</div></div>
+        </div>
       </div>
     </div>
     <div class="foot"><span>From idea to something real</span></div>
@@ -1164,51 +1261,6 @@
     <div class="foot"><span>How to write your Master Prompt &middot; Part 1</span></div>
   </section>
 
-  <!-- 17 · BUILD → LOOP (core feature + iterate, combined) -->
-  <section class="slide hero">
-    <div class="motif-2"><svg viewBox="0 0 600 600"><path d="M300 40C200 140 60 200 60 360c0 130 110 200 240 200s240-70 240-200C540 200 400 140 300 40z" fill="rgba(249,115,22,.08)"/></svg></div>
-    <div class="top">
-      <div class="brand"><span class="logo-chip"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></span></div>
-      <span class="tag">Build &middot; The loop</span>
-    </div>
-    <div class="body" style="justify-content:center;">
-      <h2 class="r" style="text-align:center;max-width:none;font-size:40px;">Build it. Then loop.</h2>
-      <div class="loopwrap r">
-        <svg viewBox="0 0 1100 350" role="img" aria-label="Flowchart: Build it, See it run, Good enough? If no, ask for the next thing and loop back; if yes, Ship it">
-          <defs>
-            <marker id="afwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a97a8"/></marker>
-            <marker id="aloop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f97316"/></marker>
-          </defs>
-          <path d="M235 150 H319" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
-          <path d="M505 150 H589" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
-          <path d="M773 150 H857" fill="none" stroke="#8a97a8" stroke-width="2" marker-end="url(#afwd)"/>
-          <text x="816" y="140" text-anchor="middle" fill="#9ca3af" font-size="12.5" font-weight="600">Yes</text>
-          <path d="M685 208 V300 H145 V182" fill="none" stroke="#f97316" stroke-width="2.4" marker-end="url(#aloop)"/>
-          <rect x="298" y="287" width="234" height="26" rx="7" fill="#0e1521" stroke="#1f2937"/>
-          <text x="415" y="304" text-anchor="middle" font-size="12.5"><tspan fill="#fb923c" font-weight="700">No</tspan><tspan fill="#cbd5e1"> &mdash; ask for the next thing</tspan></text>
-          <g>
-            <rect x="55" y="118" width="180" height="64" rx="9" fill="#1f2937" stroke="#3a4658" stroke-width="1.5"/>
-            <text x="145" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="500">Build it</text>
-          </g>
-          <g>
-            <rect x="325" y="118" width="180" height="64" rx="9" fill="#1f2937" stroke="#3a4658" stroke-width="1.5"/>
-            <text x="415" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="500">See it run</text>
-          </g>
-          <g>
-            <polygon points="685,92 773,150 685,208 597,150" fill="#1f2937" stroke="#f97316" stroke-width="1.8"/>
-            <text x="685" y="155" text-anchor="middle" fill="#fff" font-size="15.5" font-weight="500">Good enough?</text>
-          </g>
-          <g>
-            <rect x="865" y="118" width="175" height="64" rx="9" fill="rgba(249,115,22,.16)" stroke="#f97316" stroke-width="1.6"/>
-            <text x="952" y="156" text-anchor="middle" fill="#fff" font-size="17" font-weight="600">Ship it</text>
-          </g>
-        </svg>
-      </div>
-      <p class="lead r" style="text-align:center;margin-top:4px;color:#fff;font-weight:400;">So &mdash; what will you build?</p>
-    </div>
-    <div class="foot"><span>Spacefill &times; IQ &middot; AI Product Crafting Lab</span></div>
-  </section>
-
   <!-- 17b · RESOURCES -->
   <section class="slide panel">
     <div class="top">
@@ -1218,13 +1270,11 @@
     <div class="body">
       <h2 class="r">Everything you'll need</h2>
       <div class="underline r"></div>
-      <div class="grid g3 r" style="margin-top:26px;">
-        <div class="card"><h3>Master Prompt</h3><p>Write the perfect prompt</p><div class="ex">IQ Project &middot; Master Prompt GPT</div></div>
-        <div class="card"><h3>Core Feature Finder</h3><p>Pin down the one feature</p><div class="ex">IQ Project &middot; Core Feature GPT</div></div>
-        <div class="card"><h3>Supabase</h3><p>Free database &amp; auth</p><div class="ex">supabase.com</div></div>
-        <div class="card"><h3>Dribbble</h3><p>Design inspiration &mdash; screenshot it</p><div class="ex">dribbble.com</div></div>
-        <div class="card"><h3>Colour codes</h3><p>Pick two colours for your theme</p><div class="ex">htmlcolorcodes.com</div></div>
-        <div class="card"><h3>Cloudinary</h3><p>Store images &amp; assets</p><div class="ex">cloudinary.com</div></div>
+      <div class="grid g4 r" style="margin-top:26px;">
+        <div class="card" style="text-align:center;"><div class="rlogo"><img src="iq-badge.png" alt="IQ Project" /></div><h3>Master Prompt</h3><p>Write the perfect prompt</p><div class="ex">spacefill-master-prompt.vercel.app</div></div>
+        <div class="card" style="text-align:center;"><div class="rlogo"><img src="logo-supabase.svg" alt="Supabase" /></div><h3>Supabase</h3><p>Free database &amp; auth</p><div class="ex">supabase.com</div></div>
+        <div class="card" style="text-align:center;"><div class="rlogo"><img src="logo-dribbble.svg" alt="Dribbble" /></div><h3>Dribbble</h3><p>Design inspiration</p><div class="ex">dribbble.com</div></div>
+        <div class="card" style="text-align:center;"><div class="rlogo"><img src="claude-logo.png" alt="Claude" /></div><h3>Claude Code</h3><p>Where you build your app</p><div class="ex">claude.ai/code</div></div>
       </div>
     </div>
     <div class="foot"><span>Links also live in the IQ platform</span></div>
@@ -1240,10 +1290,22 @@
       <h2 class="r" style="text-align:center;max-width:none;">Your status board</h2>
       <p class="lead r" style="text-align:center;max-width:42ch;margin:14px auto 0;">Tell us where you're at &mdash; we'll jump in fast.</p>
       <div class="grid g4 r" style="margin-top:28px;">
-        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#9989;</div><h3 style="margin-top:8px;">Done</h3><p>It works</p></div>
-        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#128260;</div><h3 style="margin-top:8px;">In progress</h3><p>Still building</p></div>
-        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#10060;</div><h3 style="margin-top:8px;">Not working</h3><p>Something's off</p></div>
-        <div class="card" style="text-align:center;"><div style="font-size:34px;">&#127982;</div><h3 style="margin-top:8px;">Stuck</h3><p>Call a coach</p></div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:38px;height:38px;"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+          <h3 style="margin-top:10px;">Done</h3><p>It works</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:38px;height:38px;"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><path d="M21 3v5h-5"/></svg>
+          <h3 style="margin-top:10px;">In progress</h3><p>Still building</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:38px;height:38px;"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+          <h3 style="margin-top:10px;">Not working</h3><p>Something's off</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:38px;height:38px;"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a2.8 2.8 0 0 1 5.4 1c0 1.9-2.8 2.5-2.8 2.5"/><path d="M12 17h.01"/></svg>
+          <h3 style="margin-top:10px;">Stuck</h3><p>Call a coach</p>
+        </div>
       </div>
     </div>
     <div class="foot"><span>No one stays blocked &mdash; raise a flag</span></div>
@@ -1257,13 +1319,13 @@
       <div class="tl-left r">
         <div class="tl-kicker">Today's flow</div>
         <ol class="tl-steps">
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Get your <b>Master Prompt</b> &mdash; spacefill-master-prompt.vercel.app</span><span class="tl-time">10:00</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Get your <b>Master Prompt</b> &mdash; spacefill-master-prompt.vercel.app</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Download the boilerplate &amp; open it in Claude Code</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Connect the <b>Supabase</b> connector &mdash; create an org</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t"><b>/kickoff</b> &mdash; sets up in the background</span></div></li>
           <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Map your <b>User Flow</b> in Whimsical</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Paste your <b>Master Prompt</b> on Claude</span><span class="tl-time">~10:30</span></div></li>
-          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Build the core feature, then iterate</span><span class="tl-time">10:30 &rarr; 12:00</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Paste your <b>Master Prompt</b> on Claude</span></div></li>
+          <li><span class="tl-dot"></span><div class="tl-c"><span class="tl-t">Build the core feature, then iterate</span></div></li>
         </ol>
         <div class="tl-coaches">
           <div class="tl-coaches-lbl">Your coaches &middot; call us anytime</div>
@@ -1277,14 +1339,14 @@
         <div class="logo-chip biglogo"><img class="cap" src="spacefill-wordmark.png" alt="Spacefill" /><span class="divider"></span><img class="iq" src="iq-badge.png" alt="IQ Project" /></div>
         <span class="kicker" style="margin-bottom:10px;">Time to build</span>
         <div class="bigclock" id="bigClock">--:--</div>
-        <div class="clocksub" id="clockSub">until 12:00</div>
+        <div class="clocksub" id="clockSub">until 18:00</div>
         <div class="tprog">
-          <div class="tprog-head"><span>10:00 AM &middot; start</span><span class="mid" id="tprogMid">&nbsp;</span><span>12:00 PM &middot; finish</span></div>
+          <div class="tprog-head"><span>2:00 PM &middot; start</span><span class="mid" id="tprogMid">&nbsp;</span><span>6:00 PM &middot; finish</span></div>
           <div class="tprog-track"><div class="tprog-fill" id="tprogFill"></div></div>
         </div>
       </div>
     </div>
-    <div class="foot"><span>Hands on the keyboard until noon</span></div>
+    <div class="foot"><span>Hands on the keyboard &mdash; let's build</span></div>
   </section>
 
 <div class="counter" id="counter">01 / 23</div>
@@ -1316,6 +1378,8 @@
   slides.forEach((_,idx)=>{const b=document.createElement('button');b.addEventListener('click',()=>go(idx));dotsWrap.appendChild(b);});
   const dg=document.getElementById('dotgrid');
   if(dg){for(let k=0;k<100;k++){const s=document.createElement('i');if(k<80)s.className='on';dg.appendChild(s);}}
+  const dg2=document.getElementById('dotgrid2');
+  if(dg2){for(let k=0;k<100;k++){const s=document.createElement('i');if(k<30)s.className='on';dg2.appendChild(s);}}
 
   // Interactive crosshair on the word-space map
   const vmap=document.getElementById('vmap');
@@ -1575,16 +1639,16 @@
     const now=new Date();
     var hr=now.getHours(), ap=hr<12?'AM':'PM', h12=hr%12||12;
     el.innerHTML=h12+':'+fmt2(now.getMinutes())+'<span class="ap">'+ap+'</span>';
-    const start=new Date(now); start.setHours(10,0,0,0);
-    const end=new Date(now); end.setHours(12,0,0,0);
+    const start=new Date(now); start.setHours(14,0,0,0);
+    const end=new Date(now); end.setHours(18,0,0,0);
     const fill=document.getElementById('tprogFill'), sub=document.getElementById('clockSub'), mid=document.getElementById('tprogMid');
-    if(now<start){ fill.style.width='0%'; sub.innerHTML='Starts at <b>10:00 AM</b>'; if(mid)mid.textContent='0%'; }
+    if(now<start){ fill.style.width='0%'; sub.innerHTML='Starts at <b>2:00 PM</b>'; if(mid)mid.textContent='0%'; }
     else if(now>=end){ fill.style.width='100%'; sub.innerHTML="<b>Time's up!</b> Hands off the keyboard."; if(mid)mid.textContent='Done'; }
     else {
       const pct=(now-start)/(end-start);
       fill.style.width=(pct*100).toFixed(2)+'%';
       const rem=end-now, rh=Math.floor(rem/3600000), rm=Math.floor((rem%3600000)/60000), rs=Math.floor((rem%60000)/1000);
-      sub.innerHTML = rh>0 ? ('<b>'+rh+'h '+fmt2(rm)+'m</b> left until noon') : ('<b>'+Math.ceil(rem/60000)+'m</b> left until noon');
+      sub.innerHTML = rh>0 ? ('<b>'+rh+'h '+fmt2(rm)+'m</b> left until 6&nbsp;PM') : ('<b>'+Math.ceil(rem/60000)+'m</b> left until 6&nbsp;PM');
       if(mid)mid.textContent=Math.round(pct*100)+'%';
     }
   }
